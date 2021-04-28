@@ -1,29 +1,21 @@
 {
   "name": "forkify",
   "version": "1.0.0",
-  "description": "recipe application",
-  "main": "index.html",
+  "description": "Recipe application",
+  "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "bulid": "parcel build index.html"
+    "build": "parcel build index.html --dist-dir ./dist"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Jakhongir001/Forkify.git"
-  },
-  "author": "jakhongir abdukhamidov",
+  "author": "Jakhongir Abdukhamidov",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Jakhongir001/Forkify/issues"
-  },
-  "homepage": "https://github.com/Jakhongir001/Forkify#readme",
-  "dependencies": {
-    "core-js": "^3.11.0",
-    "regenerator-runtime": "^0.13.7"
-  },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0-beta.2",
-    "node-sass": "^5.0.0",
-    "parcel": "^2.0.0-beta.2"
+    "parcel": "^2.0.0-beta.1",
+    "sass": "^1.26.10"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "fractional": "^1.0.0",
+    "regenerator-runtime": "^0.13.7"
   }
 }
