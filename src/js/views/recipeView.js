@@ -1,4 +1,5 @@
 import icons from 'url:../../img/icons.svg';
+import { Fraction } from 'fractional';
 
 class recipeView {
   #parentElement = document.querySelector('.recipe');
@@ -26,6 +27,10 @@ class recipeView {
     this.#parentElement.innerHTML = '';
     this.#parentElement.insertAdjacentHTML('afterbegin', markup);
   };
+
+  addHandlerRender(handler) {
+    ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
+  }
 
   #generateMarkup() {
     return `
@@ -118,16 +123,19 @@ class recipeView {
 
   #generateMarkupIngredient(ing) {
     return `
-        <li class="recipe__ingredient">
-            <svg class="recipe__icon">
-                <use href="${icons}#icon-check"></use>
-            </svg>
-            <div class="recipe__description">
-                ${ing}
-            </div>
-        </li>
+      <li class="recipe__ingredient">
+        <svg class="recipe__icon">
+          <use href="${icons}#icon-check"></use>
+        </svg>
+        <div class="recipe__quantity">${
+          ing.quantity ? new Fraction(ing.quantity).toString() : ''
+        }</div>
+        <div class="recipe__description">
+          <span class="recipe__unit">${ing.unit}</span>
+            ${ing.description}
+        </div>
+      </li>
     `;
   }
 }
-
 export default new recipeView();
