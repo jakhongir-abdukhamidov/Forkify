@@ -31,7 +31,7 @@ What things you need to install the software and how to install them
 2. Run npm install inside the project root
 
 ```
-> npm install npm@latest -g
+> npm install
 ```
 
 3. Start the server
